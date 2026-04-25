@@ -43,5 +43,5 @@ export const STATS: Stat[] = [
   { value: '90 min', label: 'Desde Bogotá', sublabel: 'Acceso fácil en carro' },
   { value: '☕', label: 'Coffee Tour', sublabel: 'Incluido en tu estadía' },
   { value: '5.0', label: 'TripAdvisor', sublabel: '#1 en Zipacón' },
-  { value: '🛏️', label: 'Cabañas privadas', sublabel: 'En medio de cafetales' },
+  { value: '🛖', label: 'Cabañas privadas', sublabel: 'En medio de cafetales' },
 ];
