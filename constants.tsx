@@ -1,4 +1,4 @@
-import type { NavLink } from './types';
+import type { NavLink, Stat } from './types';
 
 // ─── Assets ───────────────────────────────────────────────────────────────────
 const CDN = 'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto';
@@ -36,4 +36,12 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'Experiencia', href: '#experiencia' },
   { label: 'Qué incluye', href: '#incluye' },
   { label: 'Ubicación', href: '#ubicacion' },
+];
+
+// ─── Stats Bar ────────────────────────────────────────────────────────────────
+export const STATS: Stat[] = [
+  { value: '90 min', label: 'Desde Bogotá', sublabel: 'Acceso fácil en carro' },
+  { value: '☕', label: 'Coffee Tour', sublabel: 'Incluido en tu estadía' },
+  { value: '5.0', label: 'TripAdvisor', sublabel: '#1 en Zipacón' },
+  { value: '🛏️', label: 'Cabañas privadas', sublabel: 'En medio de cafetales' },
 ];

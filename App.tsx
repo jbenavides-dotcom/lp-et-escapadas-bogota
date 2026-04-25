@@ -10,6 +10,7 @@ import { useI18n } from './i18n';
 
 import {
   ASSETS,
+  STATS,
   WHATSAPP_URL,
   CLOUDBEDS_URL,
   EMAIL,
@@ -43,37 +44,25 @@ function FloatingCTA() {
   );
 }
 
-// ─── Sección 2: Hook fuerte ───────────────────────────────────────────────────
-function HookSection() {
-  const { ref, isVisible } = useScrollReveal();
+// ─── Stats Bar (réplica exacta de Aves) ───────────────────────────────────────
+function StatsBar() {
   const { t } = useI18n();
-
   return (
-    <section
-      ref={ref}
-      className={`py-20 bg-brand-dark scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}
-      aria-labelledby="hook-titulo"
-    >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Eyebrow + divider */}
-        <div className="inline-flex items-center gap-3 mb-6">
-          <span className="w-8 h-px bg-brand-gold" />
-          <span className="text-brand-gold text-xs font-semibold uppercase tracking-[0.4em]">
-            {t('hook.eyebrow')}
-          </span>
-          <span className="w-8 h-px bg-brand-gold" />
+    <section className="bg-brand-dark py-10" aria-label="Estadísticas clave">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {STATS.map((stat, i) => (
+            <div key={stat.label} className="text-center">
+              <div className="font-serif text-3xl sm:text-4xl text-brand-gold mb-1">
+                {stat.value}
+              </div>
+              <div className="text-white font-semibold text-sm sm:text-base mb-0.5">
+                {t(`stats.${i}.label`)}
+              </div>
+              <div className="text-white/50 text-xs sm:text-sm">{t(`stats.${i}.sublabel`)}</div>
+            </div>
+          ))}
         </div>
-
-        <h2
-          id="hook-titulo"
-          className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white leading-tight mb-6"
-        >
-          {t('hook.title')}
-        </h2>
-
-        <p className="text-white/75 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
-          {t('hook.text')}
-        </p>
       </div>
     </section>
   );
@@ -95,7 +84,7 @@ function WhySection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <p className="text-brand-pink font-semibold tracking-widest uppercase text-sm mb-3">
+          <p className="text-brand-green font-semibold tracking-widest uppercase text-sm mb-3">
             {t('why.subtitle')}
           </p>
           <h2
@@ -117,10 +106,10 @@ function WhySection() {
               className="bg-white rounded-2xl p-6 shadow-sm border border-brand-beige/40 hover:shadow-md hover:-translate-y-1 transition-all duration-200 group"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <div className="w-12 h-12 rounded-xl bg-brand-pink/10 flex items-center justify-center mb-4">
-                <Icon className="w-6 h-6 text-brand-pink" aria-hidden="true" />
+              <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center mb-4">
+                <Icon className="w-6 h-6 text-brand-green" aria-hidden="true" />
               </div>
-              <h3 className="font-serif text-lg text-brand-dark mb-2 group-hover:text-brand-pink transition-colors duration-200">
+              <h3 className="font-serif text-lg text-brand-dark mb-2 group-hover:text-brand-green transition-colors duration-200">
                 {t(`why.${i}.title`)}
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed">{t(`why.${i}.desc`)}</p>
@@ -152,7 +141,7 @@ function ExperienceSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <p className="text-brand-pink font-semibold tracking-widest uppercase text-sm mb-3">
+          <p className="text-brand-green font-semibold tracking-widest uppercase text-sm mb-3">
             {t('exp.subtitle')}
           </p>
           <h2
@@ -184,7 +173,7 @@ function ExperienceSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/50 via-transparent to-transparent" />
                 {/* Step number */}
-                <div className="absolute top-5 left-5 w-12 h-12 rounded-full bg-brand-pink text-white flex items-center justify-center font-serif text-xl font-bold shadow-lg">
+                <div className="absolute top-5 left-5 w-12 h-12 rounded-full bg-brand-green text-white flex items-center justify-center font-serif text-xl font-bold shadow-lg">
                   {i + 1}
                 </div>
                 {/* Step label */}
@@ -233,7 +222,7 @@ function IncludeSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Texto + lista */}
           <div>
-            <p className="text-brand-pink font-semibold tracking-widest uppercase text-sm mb-3">
+            <p className="text-brand-green font-semibold tracking-widest uppercase text-sm mb-3">
               {t('incluye.subtitle')}
             </p>
             <h2
@@ -249,8 +238,8 @@ function IncludeSection() {
             <ul className="space-y-4">
               {[0, 1, 2, 3].map((i) => (
                 <li key={i} className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-10 h-10 rounded-full bg-brand-pink/15 flex items-center justify-center mt-0.5">
-                    <Check className="w-5 h-5 text-brand-pink" strokeWidth={3} aria-hidden="true" />
+                  <span className="flex-shrink-0 w-10 h-10 rounded-full bg-brand-green/15 flex items-center justify-center mt-0.5">
+                    <Check className="w-5 h-5 text-brand-green" strokeWidth={3} aria-hidden="true" />
                   </span>
                   <span className="text-brand-dark text-lg leading-relaxed pt-1.5">
                     {t(`incluye.${i}`)}
@@ -356,7 +345,7 @@ function LocationSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <p className="text-brand-pink font-semibold tracking-widest uppercase text-sm mb-3">
+          <p className="text-brand-green font-semibold tracking-widest uppercase text-sm mb-3">
             {t('location.subtitle')}
           </p>
           <h2
@@ -519,22 +508,19 @@ function Footer() {
   return (
     <footer className="bg-brand-dark border-t border-white/10 py-12" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Link cruzado a romántica — destacado arriba del footer principal */}
-        <div className="bg-gradient-to-r from-brand-pink/10 via-brand-pink/15 to-brand-pink/10 border border-brand-pink/30 rounded-2xl p-5 sm:p-6 mb-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
-          <span className="text-white/85 text-sm sm:text-base font-medium">
-            {t('footer.romantica.label')}
-          </span>
-          <a
-            href={ROMANTICAS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-brand-pink/20 hover:bg-brand-pink/30 border border-brand-pink/50 text-brand-gold hover:text-white px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200"
-          >
-            {t('footer.romantica.cta')}
-            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
+        {/* Link cruzado a romántica — sobrio, integrado al footer */}
+        <div className="border-b border-white/10 pb-8 mb-10 text-center">
+          <p className="text-white/50 text-sm">
+            {t('footer.romantica.label')}{' '}
+            <a
+              href={ROMANTICAS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-gold hover:text-white underline underline-offset-4 transition-colors duration-200"
+            >
+              {t('footer.romantica.cta')}
+            </a>
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-10 mb-10">
@@ -631,7 +617,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <HookSection />
+        <StatsBar />
         <WhySection />
         <ExperienceSection />
         <IncludeSection />

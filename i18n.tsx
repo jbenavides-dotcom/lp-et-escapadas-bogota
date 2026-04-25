@@ -38,10 +38,15 @@ const translations: Record<Lang, Record<string, string>> = {
     'hero.chip.naturaleza': 'Naturaleza real',
     'hero.chip.desayuno': 'Desayuno incluido',
 
-    // Hook fuerte (sección 2)
-    'hook.eyebrow': 'Más que un hotel',
-    'hook.title': 'No es solo un lugar para quedarse… es un lugar para desconectarte',
-    'hook.text': 'En La Palma & El Tucán Hotel no vienes solo a dormir. Vienes a bajar el ritmo, respirar aire puro y vivir el café desde su origen. Un espacio diseñado para quienes buscan salir de la rutina y reconectar con lo esencial.',
+    // Stats Bar (sección 2)
+    'stats.0.label': 'Desde Bogotá',
+    'stats.0.sublabel': 'Acceso fácil en carro',
+    'stats.1.label': 'Coffee Tour',
+    'stats.1.sublabel': 'Incluido en tu estadía',
+    'stats.2.label': 'TripAdvisor',
+    'stats.2.sublabel': '#1 en Zipacón',
+    'stats.3.label': 'Cabañas privadas',
+    'stats.3.sublabel': 'En medio de cafetales',
 
     // ¿Por qué venir? (sección 3)
     'why.subtitle': '¿POR QUÉ VENIR?',
@@ -146,10 +151,15 @@ const translations: Record<Lang, Record<string, string>> = {
     'hero.chip.naturaleza': 'Real nature',
     'hero.chip.desayuno': 'Breakfast included',
 
-    // Hook
-    'hook.eyebrow': 'More than a hotel',
-    'hook.title': 'More than a place to stay — a place to truly disconnect',
-    'hook.text': 'At La Palma & El Tucán Hotel you do not just come to sleep. You come to slow down, breathe pure air, and experience coffee from its origin. A space designed for those looking to step out of routine and reconnect with what matters.',
+    // Stats Bar
+    'stats.0.label': 'From Bogotá',
+    'stats.0.sublabel': 'Easy access by car',
+    'stats.1.label': 'Coffee Tour',
+    'stats.1.sublabel': 'Included in your stay',
+    'stats.2.label': 'TripAdvisor',
+    'stats.2.sublabel': '#1 in Zipacón',
+    'stats.3.label': 'Private cabins',
+    'stats.3.sublabel': 'Amid the coffee fields',
 
     // Why come
     'why.subtitle': 'WHY COME',
