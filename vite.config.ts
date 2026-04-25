@@ -1,0 +1,23 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
+import path from 'path';
+
+export default defineConfig({
+  base: '/lp-et-escapadas-bogota/',
+  plugins: [
+    tailwindcss(),
+    react(),
+  ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '.'),
+    },
+  },
+  server: {
+    port: 3024,
+  },
+  preview: {
+    port: 3024,
+  },
+});
