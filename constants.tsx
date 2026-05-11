@@ -76,5 +76,4 @@ export const STATS_ESCAPADAS: EscapadasStat[] = [
   { value: '3.3 km' },
   { value: '🍽️' },
   { value: '🏡' },
-  { value: '✨' },
 ];

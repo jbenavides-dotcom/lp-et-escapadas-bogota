@@ -11,7 +11,7 @@ export default function StatsBar() {
       aria-label="Lo que incluye tu escapada"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-x-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-6">
           {STATS_ESCAPADAS.map((stat, i) => (
             <div
               key={i}
