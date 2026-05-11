@@ -1,4 +1,4 @@
-import { ChevronDown, Coffee, Trees, Utensils } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { ASSETS, CLOUDBEDS_URL } from '../constants';
 import { useI18n } from '../i18n';
 import { useAnalytics } from '../hooks/useAnalytics';
@@ -8,15 +8,9 @@ export default function Hero() {
   const { trackAvailabilityClick } = useAnalytics();
 
   const handleScrollDown = () => {
-    const next = document.querySelector('#por-que');
+    const next = document.querySelector('#stats');
     if (next) next.scrollIntoView({ behavior: 'smooth' });
   };
-
-  const CHIPS = [
-    { icon: Coffee, key: 'hero.chip.coffee' },
-    { icon: Trees, key: 'hero.chip.naturaleza' },
-    { icon: Utensils, key: 'hero.chip.desayuno' },
-  ];
 
   return (
     <section
@@ -24,55 +18,35 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       aria-label="Inicio — Escapadas cerca de Bogotá La Palma & El Tucán"
     >
-      {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img
           src={ASSETS.HERO_BG}
-          alt="Cabaña en bosque de niebla y cafetales cerca de Bogotá"
+          alt="Cabaña entre cafetales y bosque de niebla cerca de Bogotá"
           className="w-full h-full object-cover object-center"
+          loading="eager"
+          fetchPriority="high"
         />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-black/75" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
-        {/* Location badge */}
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-20">
         <div className="inline-flex items-center gap-2 bg-brand-green/25 border border-brand-green/50 text-brand-gold px-4 py-2 rounded-full text-sm font-medium tracking-widest uppercase mb-8 backdrop-blur-sm">
           <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse" />
           {t('hero.badge')}
         </div>
 
-        {/* H1 */}
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-4">
-          {t('hero.title.pre')}{' '}
-          <span className="text-brand-gold italic">{t('hero.title.highlight')}</span>
+        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-5">
+          {t('hero.title')}
         </h1>
 
-        {/* Subtitle */}
         <p className="text-white/85 text-base sm:text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
           {t('hero.subtitle')}
         </p>
 
-        {/* Description */}
-        <p className="text-white/65 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+        <p className="text-white/70 text-sm sm:text-base max-w-2xl mx-auto mb-10 leading-relaxed">
           {t('hero.description')}
         </p>
 
-        {/* Trust chips */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
-          {CHIPS.map(({ icon: Icon, key }) => (
-            <span
-              key={key}
-              className="flex items-center gap-1.5 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 px-4 py-1.5 rounded-full text-sm font-medium"
-            >
-              <Icon className="w-3.5 h-3.5 text-brand-gold flex-shrink-0" aria-hidden="true" />
-              {t(key)}
-            </span>
-          ))}
-        </div>
-
-        {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href={CLOUDBEDS_URL}
@@ -97,7 +71,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <button
         onClick={handleScrollDown}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white/60 hover:text-white transition-colors duration-200 animate-bounce"

@@ -10,6 +10,7 @@ const NAV_KEY_MAP: Record<string, string> = {
   '#por-que': 'nav.porque',
   '#experiencia': 'nav.experiencia',
   '#incluye': 'nav.incluye',
+  '#adicionales': 'nav.adicionales',
   '#ubicacion': 'nav.ubicacion',
 };
 

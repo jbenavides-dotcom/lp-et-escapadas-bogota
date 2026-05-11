@@ -1,23 +1,30 @@
-import type { NavLink, Stat } from './types';
+import type { NavLink } from './types';
 
 // ─── Assets ───────────────────────────────────────────────────────────────────
+// Cloudinary base — feedback Lina (imágenes nuevas subidas a /lpet/escapadas-*)
 const CDN = 'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto';
 
 export const ASSETS = {
-  // Hero — cabaña entre cafetales (reuso de la landing romántica)
-  HERO_BG:        `${CDN},w_1600/lpet/romantico-hero.jpg`,
-  // Cafetal / naturaleza
-  CAFETAL:        `${CDN},w_1200/lpet/aves-tucaneta.jpg`,
-  // Cabaña / experiencia (sunset romantico)
-  CABANA:         `${CDN},w_1000/lpet/romantico-sunset.jpg`,
-  // Imagen de café / coffee tour
-  COFFEE:         `${CDN},w_1000/lpet/aves-guia-binoculares.jpg`,
-  // Galería pasos / experiencia narrativa
-  STEP_1:         `${CDN},w_800/lpet/romantico-hero.jpg`,
-  STEP_2:         `${CDN},w_800/lpet/aves-guia-binoculares.jpg`,
-  STEP_3:         `${CDN},w_800/lpet/romantico-sunset.jpg`,
-  // Bg cierre CTA
-  SUNSET:         `${CDN},w_1600/lpet/romantico-sunset.jpg`,
+  // Hero principal — escapadas-hero
+  HERO_BG:        `${CDN},w_2000/lpet/escapadas-hero.jpg`,
+  // Sección 2: Hook / Diferencial — escapadas-hook
+  HOOK:           `${CDN},w_1200/lpet/escapadas-hook.jpg`,
+  // Sección 4: Storytelling — escapadas-storytelling
+  STORYTELLING:   `${CDN},w_2000/lpet/escapadas-storytelling.jpg`,
+  // Sección 5: Coffee Tour card
+  COFFEE_TOUR:    `${CDN},w_1200/lpet/escapadas-coffee-tour.jpg`,
+  // Sección 5: Cabaña card
+  CABANA:         `${CDN},w_1200/lpet/escapadas-cabana.jpg`,
+  // Sección 6: Experiencias adicionales (banner)
+  TOUR_EXTRA:     `${CDN},w_2000/lpet/escapadas-tour-extra.jpg`,
+  // Sección 5: Senderos naturales card (reusa foto bosque del flujo romántico)
+  SENDEROS:       `${CDN},w_1200/lpet/romantico-bosque.jpg`,
+  // Bg CTA final — reusamos storytelling (atardecer/finca)
+  SUNSET:         `${CDN},w_2000/lpet/escapadas-storytelling.jpg`,
+  // Pasos narrativa (legacy — la sección Experience ahora muestra párrafo + imagen única)
+  STEP_1:         `${CDN},w_1200/lpet/escapadas-hero.jpg`,
+  STEP_2:         `${CDN},w_1200/lpet/escapadas-coffee-tour.jpg`,
+  STEP_3:         `${CDN},w_1200/lpet/escapadas-cabana.jpg`,
 } as const;
 
 // ─── Contact & CTAs ───────────────────────────────────────────────────────────
@@ -30,18 +37,32 @@ export const EMAIL = 'reservations@lapalmayeltucan.com';
 // Link cruzado a la landing romántica existente
 export const ROMANTICAS_URL = 'https://escapadas.lapalmayeltucanhotel.com/';
 
+// Datos contacto (footer — feedback Lina)
+export const HOTEL_PHONE_DISPLAY = '+57 318 956 5617';
+export const HOTEL_WEBSITE = 'www.lapalmayeltucan.com';
+export const HOTEL_INSTAGRAM = '@lapalmayeltucanhotel';
+export const HOTEL_LOCATION_DISPLAY = 'Zipacón, Cundinamarca';
+
 // ─── Navigation ───────────────────────────────────────────────────────────────
 export const NAV_LINKS: NavLink[] = [
   { label: 'Por qué venir', href: '#por-que' },
   { label: 'Experiencia', href: '#experiencia' },
   { label: 'Qué incluye', href: '#incluye' },
+  { label: 'Adicionales', href: '#adicionales' },
   { label: 'Ubicación', href: '#ubicacion' },
 ];
 
-// ─── Stats Bar ────────────────────────────────────────────────────────────────
-export const STATS: Stat[] = [
-  { value: '90 min', label: 'Desde Bogotá', sublabel: 'Acceso fácil en carro' },
-  { value: '☕', label: 'Coffee Tour', sublabel: 'Incluido en tu estadía' },
-  { value: '5.0', label: 'TripAdvisor', sublabel: '#1 en Zipacón' },
-  { value: '🛖', label: 'Cabañas privadas', sublabel: 'En medio de cafetales' },
+// ─── Stats Bar (sección dark debajo del Hero — patrón Aves) ──────────────────
+// 5 ítems: value grande (emoji o número), label corto, sublabel descriptivo.
+// Copy aprobado por Lina; mostrado en `sections/StatsBar.tsx`.
+export interface EscapadasStat {
+  value: string;
+}
+
+export const STATS_ESCAPADAS: EscapadasStat[] = [
+  { value: '☕' },
+  { value: '3.3 km' },
+  { value: '🍽️' },
+  { value: '🏡' },
+  { value: '✨' },
 ];
