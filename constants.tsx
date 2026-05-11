@@ -9,16 +9,28 @@ export const ASSETS = {
   HERO_BG:        `${CDN},w_2000/lpet/escapadas-hero.jpg`,
   // Sección 2: Hook / Diferencial — escapadas-hook
   HOOK:           `${CDN},w_1200/lpet/escapadas-hook.jpg`,
-  // Sección 4: Storytelling — escapadas-storytelling
+  // Sección 4: Storytelling — escapadas-storytelling (legacy)
   STORYTELLING:   `${CDN},w_2000/lpet/escapadas-storytelling.jpg`,
+  // Sección 4 (actual): "Así se vive" — paisaje aéreo finca
+  ASI_SE_VIVE:    `${CDN},w_2000/lpet/escapadas-asi-se-vive.jpg`,
+  // Sección 3: 4 imágenes para WhySection (¿Por qué elegirnos?)
+  WHY_DESCONEXION: `${CDN},w_1200/lpet/escapadas-why-desconexion.jpg`,
+  WHY_CAFE:        `${CDN},w_1200/lpet/escapadas-why-cafe.jpg`,
+  WHY_BOUTIQUE:    `${CDN},w_1200/lpet/escapadas-why-boutique.jpg`,
+  WHY_AUTENTICA:   `${CDN},w_1200/lpet/escapadas-why-autentica.jpg`,
   // Sección 5: Coffee Tour card
   COFFEE_TOUR:    `${CDN},w_1200/lpet/escapadas-coffee-tour.jpg`,
   // Sección 5: Cabaña card
   CABANA:         `${CDN},w_1200/lpet/escapadas-cabana.jpg`,
   // Sección 6: Experiencias adicionales (banner)
   TOUR_EXTRA:     `${CDN},w_2000/lpet/escapadas-tour-extra.jpg`,
-  // Sección 5: Senderos naturales card (reusa foto bosque del flujo romántico)
+  // Sección 5: Senderos naturales card (reusa foto bosque del flujo romántico — legacy)
   SENDEROS:       `${CDN},w_1200/lpet/romantico-bosque.jpg`,
+  // Sección 6 "Todo lo que necesitas para desconectarte" — 4 fotos finales (2026-05-11 PM)
+  INCLUYE_COFFEE:   `${CDN},w_1200/lpet/escapadas-incluye-coffee.jpg`,
+  INCLUYE_DESAYUNO: `${CDN},w_1200,h_900,c_fill,g_auto/lpet/escapadas-incluye-desayuno.jpg`,
+  INCLUYE_CABANA:   `${CDN},w_1200/lpet/escapadas-incluye-cabana.jpg`,
+  INCLUYE_SENDEROS: `${CDN},w_1200/lpet/escapadas-incluye-senderos.jpg`,
   // Bg CTA final — reusamos storytelling (atardecer/finca)
   SUNSET:         `${CDN},w_2000/lpet/escapadas-storytelling.jpg`,
   // Pasos narrativa (legacy — la sección Experience ahora muestra párrafo + imagen única)

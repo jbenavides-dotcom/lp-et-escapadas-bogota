@@ -142,13 +142,13 @@ const translations: Record<Lang, Record<string, string>> = {
 
     // ─── 9. CTA FINAL ────────────────────────────────────────────────────────
     'cta.badge': 'Cupos limitados · Fines de semana se agotan rápido',
-    'cta.title': 'Reserva tu próxima escapada 🌿☕',
+    'cta.title': 'Reserva tu próxima escapada 🌿',
     'cta.urgency': 'Contamos con pocas cabañas y la disponibilidad suele ser limitada, especialmente fines de semana y festivos.',
     'cta.subtitle': 'Escríbenos y planea tu experiencia en la naturaleza.',
     'cta.button': 'Ver disponibilidad',
     'cta.whatsapp': 'Reservar por WhatsApp',
     'cta.email': 'Escribir por correo',
-    'cta.trust': 'Respuesta inmediata · Hablamos español · Confirmación al instante',
+    'cta.trust': 'Respuesta inmediata · Confirmación al instante',
 
     // ─── 10. FOOTER ──────────────────────────────────────────────────────────
     'footer.description': 'Hotel boutique en bosque de niebla y cafetales, a 90 minutos de Bogotá. Una escapada hecha para reconectar con lo esencial.',
@@ -288,13 +288,13 @@ const translations: Record<Lang, Record<string, string>> = {
 
     // ─── 9. CTA FINAL ────────────────────────────────────────────────────────
     'cta.badge': 'Limited availability · Weekends sell out fast',
-    'cta.title': 'Book your next escape 🌿☕',
+    'cta.title': 'Book your next escape 🌿',
     'cta.urgency': 'We have only a few cabins and availability tends to be limited, especially on weekends and holidays.',
     'cta.subtitle': 'Write us and plan your experience in nature.',
     'cta.button': 'Check availability',
     'cta.whatsapp': 'Book via WhatsApp',
     'cta.email': 'Send an email',
-    'cta.trust': 'Immediate response · We speak English · Instant confirmation',
+    'cta.trust': 'Immediate response · Instant confirmation',
 
     // ─── 10. FOOTER ──────────────────────────────────────────────────────────
     'footer.description': 'Boutique hotel in cloud forest and coffee plantations, 90 minutes from Bogotá. An escape made to reconnect with what truly matters.',

@@ -80,21 +80,33 @@ function WhySection() {
           </p>
         </div>
 
-        {/* 4 cards con emoji + título + texto — copy Lina */}
+        {/* 4 cards con imagen + título + texto — fotos Diego/Lina 2026-05-11 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[0, 1, 2, 3].map((i) => (
+          {[
+            { i: 0, img: ASSETS.WHY_DESCONEXION, alt: 'Estación de catación en medio del bosque — desconexión real' },
+            { i: 1, img: ASSETS.WHY_CAFE, alt: 'Mesa de café de especialidad con visitantes' },
+            { i: 2, img: ASSETS.WHY_BOUTIQUE, alt: 'Interior de cabaña boutique con vista al bosque' },
+            { i: 3, img: ASSETS.WHY_AUTENTICA, alt: 'Mesa con platos de gastronomía local' },
+          ].map(({ i, img, alt }) => (
             <article
               key={i}
-              className="bg-white rounded-2xl p-6 shadow-sm border border-brand-beige/40 hover:shadow-md hover:-translate-y-1 transition-all duration-200 group"
+              className="bg-white rounded-2xl shadow-sm border border-brand-beige/40 hover:shadow-md hover:-translate-y-1 transition-all duration-200 group overflow-hidden flex flex-col"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <div className="w-14 h-14 rounded-2xl bg-brand-green/10 flex items-center justify-center mb-4 text-3xl">
-                <span aria-hidden="true">{t(`why.${i}.emoji`)}</span>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={img}
+                  alt={alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
               </div>
-              <h3 className="font-serif text-xl text-brand-dark mb-2 group-hover:text-brand-green transition-colors duration-200">
-                {t(`why.${i}.title`)}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{t(`why.${i}.desc`)}</p>
+              <div className="p-6 flex-1 flex flex-col">
+                <h3 className="font-serif text-xl text-brand-dark mb-2 group-hover:text-brand-green transition-colors duration-200">
+                  {t(`why.${i}.title`)}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{t(`why.${i}.desc`)}</p>
+              </div>
             </article>
           ))}
         </div>
@@ -129,10 +141,10 @@ function ExperienceSection() {
           </h2>
         </div>
 
-        {/* Imagen storytelling grande */}
+        {/* Imagen storytelling grande — paisaje aéreo finca */}
         <div className="rounded-3xl overflow-hidden shadow-2xl mb-12 max-w-5xl mx-auto">
           <img
-            src={ASSETS.STORYTELLING}
+            src={ASSETS.ASI_SE_VIVE}
             alt={t('exp.img.alt')}
             className="w-full h-[300px] sm:h-[440px] lg:h-[520px] object-cover"
             loading="lazy"
@@ -167,13 +179,12 @@ function IncludeSection() {
   const { t } = useI18n();
   const { trackAvailabilityClick } = useAnalytics();
 
-  // Decisión editorial: las 4 cards sin foto, solo emoji grande sobre gradient
-  // verde-gold. Consistencia visual + honesto (no hay foto de desayuno disponible).
+  // 4 cards con foto real (fotos Diego/Lina 2026-05-11 PM)
   const ITEMS = [
-    { key: 0, img: null, imgAlt: null },
-    { key: 1, img: null, imgAlt: null },
-    { key: 2, img: null, imgAlt: null },
-    { key: 3, img: null, imgAlt: null },
+    { key: 0, img: ASSETS.INCLUYE_COFFEE, imgAlt: 'Coffee Tour: visitantes y proceso del café en la finca', pos: 'center' },
+    { key: 1, img: ASSETS.INCLUYE_DESAYUNO, imgAlt: 'Desayuno incluido con vista al bosque andino', pos: 'bottom' },
+    { key: 2, img: ASSETS.INCLUYE_CABANA, imgAlt: 'Cabaña privada con balcón al bosque', pos: 'center' },
+    { key: 3, img: ASSETS.INCLUYE_SENDEROS, imgAlt: '3.3 km de senderos naturales rodeados de bosque', pos: 'center' },
   ];
 
   return (
@@ -199,20 +210,31 @@ function IncludeSection() {
           </p>
         </div>
 
-        {/* Grid 4 cards — solo texto (sin emoji grande ni imagen) */}
+        {/* Grid 4 cards con foto + texto */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {ITEMS.map(({ key: i }) => (
+          {ITEMS.map(({ key: i, img, imgAlt, pos }) => (
             <article
               key={i}
-              className="bg-white rounded-3xl shadow-sm border border-brand-beige/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 group p-8 flex flex-col"
+              className="bg-white rounded-3xl shadow-sm border border-brand-beige/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 group overflow-hidden flex flex-col"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <h3 className="font-serif text-xl text-brand-dark mb-3 group-hover:text-brand-green transition-colors duration-200">
-                {t(`incluye.${i}.title`)}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                {t(`incluye.${i}.desc`)}
-              </p>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={img}
+                  alt={imgAlt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  style={{ objectPosition: pos }}
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-6 flex-1 flex flex-col">
+                <h3 className="font-serif text-xl text-brand-dark mb-2 group-hover:text-brand-green transition-colors duration-200">
+                  {t(`incluye.${i}.title`)}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  {t(`incluye.${i}.desc`)}
+                </p>
+              </div>
             </article>
           ))}
         </div>
@@ -316,49 +338,7 @@ function LocationSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Map */}
-          <div className="rounded-3xl overflow-hidden shadow-lg aspect-video md:aspect-auto">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.3!2d-74.3878!3d4.7547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDUnMTcuMCJOIDc0wrAyMycxNi4xIlc!5e0!3m2!1ses!2sco!4v1"
-              width="100%"
-              height="100%"
-              style={{ border: 0, minHeight: '320px' }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Ubicación La Palma & El Tucán"
-            />
-          </div>
-
-          {/* Directions */}
-          <div className="bg-brand-dark rounded-3xl p-8 text-white">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-5 h-5 text-brand-gold" aria-hidden="true" />
-              </div>
-              <h3 className="font-serif text-xl">{t('location.howto')}</h3>
-            </div>
-            <ul className="space-y-5">
-              <li className="flex items-start gap-4">
-                <span className="text-2xl flex-shrink-0 leading-tight">🚗</span>
-                <span className="text-white/85 leading-relaxed">{t('location.item.0')}</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <span className="text-2xl flex-shrink-0 leading-tight">🛣️</span>
-                <span className="text-white/85 leading-relaxed">{t('location.item.1')}</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <span className="text-2xl flex-shrink-0 leading-tight">🌤️</span>
-                <span className="text-white/85 leading-relaxed">{t('location.item.2')}</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <span className="text-2xl flex-shrink-0 leading-tight">🌿</span>
-                <span className="text-white/85 leading-relaxed">{t('location.item.3')}</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        {/* Mapa removido (feedback usuario) — solo queda el copy de la sección */}
       </div>
     </section>
   );

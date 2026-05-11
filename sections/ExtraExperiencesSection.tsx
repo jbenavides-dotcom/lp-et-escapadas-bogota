@@ -1,5 +1,5 @@
 import { Bird, Leaf, HandHeart, Flower2, Bug, UtensilsCrossed } from 'lucide-react';
-import { ASSETS, WHATSAPP_URL } from '../constants';
+import { WHATSAPP_URL } from '../constants';
 import { useI18n } from '../i18n';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { useAnalytics } from '../hooks/useAnalytics';
@@ -30,32 +30,18 @@ export default function ExtraExperiencesSection() {
       aria-labelledby="extra-titulo"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header — mismo patrón que "Así se vive" */}
+        {/* Header — sin imagen (feedback usuario) */}
         <div className="text-center mb-12">
           <p className="text-brand-green font-semibold tracking-widest uppercase text-sm mb-3">
             {t('extra.subtitle')}
           </p>
           <h2
             id="extra-titulo"
-            className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-dark mb-4 max-w-3xl mx-auto leading-tight"
+            className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-dark mb-5 max-w-3xl mx-auto leading-tight"
           >
             {t('extra.title')}
           </h2>
-        </div>
-
-        {/* Imagen grande estilo storytelling (mismo patrón "Así se vive") */}
-        <div className="rounded-3xl overflow-hidden shadow-2xl mb-12 max-w-5xl mx-auto">
-          <img
-            src={ASSETS.TOUR_EXTRA}
-            alt="Actividades adicionales en La Palma & El Tucán: aves, naturaleza, gastronomía"
-            className="w-full h-[300px] sm:h-[440px] lg:h-[520px] object-cover"
-            loading="lazy"
-          />
-        </div>
-
-        {/* Descripción centrada */}
-        <div className="max-w-3xl mx-auto mb-12">
-          <p className="text-gray-700 text-lg sm:text-xl leading-relaxed text-center">
+          <p className="text-gray-700 text-lg sm:text-xl leading-relaxed text-center max-w-3xl mx-auto">
             {t('extra.description')}
           </p>
         </div>
